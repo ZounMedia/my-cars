@@ -18,7 +18,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
   width: 3px;
-  background: rgb(162, 38, 38);
+  background: rgb(96, 22, 22);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -49,6 +49,7 @@ html {
   color: white;
   font-family: "Splash", cursive;
   transition: all 0.3s ease-in-out;
+  letter-spacing: 2px;
 }
 
 .navbar #navbarNav ul li a:hover {
@@ -97,12 +98,12 @@ html {
   height: 65px;
   border-radius: 8px;
   margin-top: 10px;
-  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.331); */
+  letter-spacing: 3px;
   background: transparent;
   color: white;
   font-family: "Splash", cursive;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 900;
   line-height: 5px;
   outline: none;
   border: 0.5px solid white;
