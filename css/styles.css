@@ -1,0 +1,121 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  width: 3px;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 3px;
+  background: rgb(162, 38, 38);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(238, 162, 162);
+}
+
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  color: white;
+}
+
+.navbar .navbar-brand {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: white;
+  font-family: "Splash", cursive;
+}
+
+.navbar .navbar-brand.scrolled {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: rgb(125, 125, 125);
+}
+
+.navbar #navbarNav ul li a {
+  font-weight: 700;
+  color: white;
+  font-family: "Splash", cursive;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar #navbarNav ul li a:hover {
+  color: rgb(42, 42, 42);
+}
+
+.navbar #navbarNav ul li a.scrolled {
+  font-weight: 700;
+  color: rgb(125, 125, 125);
+}
+
+.navbar.scrolled {
+  background-color: white; /* Adjust the color as needed */
+  color: lightgray;
+}
+
+.landing-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/img/sportscar.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.landing-bg .heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  color: white;
+}
+
+.landing-bg .heading h1 {
+  font-family: "Splash", cursive;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 900;
+  text-shadow: black 2px 2px;
+}
+
+.landing-bg .heading button {
+  width: 250px;
+  height: 65px;
+  border-radius: 8px;
+  margin-top: 10px;
+  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.331); */
+  background: transparent;
+  color: white;
+  font-family: "Splash", cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 5px;
+  outline: none;
+  border: 0.5px solid white;
+  transition: all 0.3s ease-in-out;
+}
+
+.landing-bg .heading button:hover {
+  background: rgba(255, 255, 255, 0.311);
+  color: rgb(42, 42, 42);
+  outline: rgb(125, 125, 125);
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+}
