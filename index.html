@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Car Tracker</title>
+    <title>Dream Car Tracker</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -17,8 +17,73 @@
     />
   </head>
   <body>
+    <div
+      class="modal fade"
+      id="addCarModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="addCarModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addCarModalLabel">Add New Car</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="carName">Car Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="carName"
+                  placeholder="Enter car name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="imgUrl">Image URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="imgUrl"
+                  placeholder="Enter image URL"
+                />
+              </div>
+              <div class="form-group">
+                <label for="carDescription">Car Description</label>
+                <textarea
+                  class="form-control"
+                  id="carDescription"
+                  rows="3"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save Car</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand" href="#">MCT</a>
+      <a class="navbar-brand" href="#">DCT</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -33,9 +98,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Cars</a>
+            <a class="nav-link" href="/#cars">Cars</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" data-toggle="modal" data-target="#addCarModal">
             <a class="nav-link" href="#">Add Car</a>
           </li>
         </ul>
@@ -44,17 +109,109 @@
 
     <div class="landing-bg">
       <div class="heading">
-        <h1>My Car Tracker</h1>
+        <h1>Dream Car Tracker</h1>
         <button>Add Car</button>
       </div>
     </div>
     <main>
-      <section class="addCar">add new car</section>
-      <section class="cars">All cars</section>
+      <section class="cars" id="cars">
+        <div class="container-fluid">
+          <div class="row" id="car-grid">
+            <!-- Sample Card -->
+            <div class="col-sm-12 col-md-12 col-lg-6 mb-4">
+              <div class="card">
+                <img
+                  src="https://www.mclarencf.com/imagetag/192/2/l/Used-2018-BMW-X6-M.jpg"
+                  class="card-img-top"
+                  alt="Car Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Car Name</h5>
+                  <p class="card-text">
+                    Details about the car. Specifications, features, and other
+                    relevant information.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="edit">Edit</button
+                  ><button class="delete">Delete</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-6 mb-4">
+              <div class="card">
+                <img
+                  src="https://www.carscoops.com/wp-content/uploads/2023/04/Lamborghini-Revuelto-5-1024x683.jpg"
+                  class="card-img-top"
+                  alt="Car Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Car Name</h5>
+                  <p class="card-text">
+                    Details about the car. Specifications, features, and other
+                    relevant information.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="edit">Edit</button
+                  ><button class="delete">Delete</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-6 mb-4">
+              <div class="card">
+                <img
+                  src="https://www.forbes.com/wheels/wp-content/uploads/2021/08/Alfa-Romeo-Tonale-concept-seo.jpg"
+                  class="card-img-top"
+                  alt="Car Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Car Name</h5>
+                  <p class="card-text">
+                    Details about the car. Specifications, features, and other
+                    relevant information.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="edit">Edit</button
+                  ><button class="delete">Delete</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-6 mb-4">
+              <div class="card">
+                <img
+                  src="https://mclaren.scene7.com/is/image/mclaren/720S-Coupe_hero:crop-16x9?wid=1980&hei=1114"
+                  class="card-img-top"
+                  alt="Car Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Car Name</h5>
+                  <p class="card-text">
+                    Details about the car. Specifications, features, and other
+                    relevant information.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="edit">Edit</button
+                  ><button class="delete">Delete</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Repeat the above block for more cards -->
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/CarService.js"></script>
   </body>
 </html>

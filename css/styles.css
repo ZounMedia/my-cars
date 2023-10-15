@@ -1,9 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body,
 html {
   height: 100%;
   margin: 0;
   font-size: 18px;
   scroll-behavior: smooth;
+  background: white; /* fallback for old browsers */
 }
 
 ::-webkit-scrollbar {
@@ -67,13 +74,15 @@ html {
 }
 
 .landing-bg {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url("../assets/img/sportscar.png");
-  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .landing-bg .heading {
@@ -119,5 +128,50 @@ html {
 main {
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(to bottom, #2f3b52, #1a202c);
+}
+
+main section.cars {
+  margin-top: 10px;
+}
+
+main section.cars .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main section.cars .card img {
+  max-height: 360px;
+}
+
+main section.cars .card .card-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+main section.cars .card .card-footer button {
+  width: 45%;
+  height: 56px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+main section.cars .card .card-footer button.edit {
+  color: #1a202c;
+  outline: 1px solid #1a202c;
+}
+
+main section.cars .card .card-footer button.edit:hover {
+  color: white;
+  background: #1a202c;
+}
+
+main section.cars .card .card-footer button.delete {
+  /* margin-left: 15px; */
+  color: rgb(96, 22, 22);
+  outline: 1px solid rgb(96, 22, 22);
+}
+
+main section.cars .card .card-footer button.delete:hover {
+  color: white;
+  background: rgb(96, 22, 22);
 }
