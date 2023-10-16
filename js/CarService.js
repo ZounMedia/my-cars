@@ -63,7 +63,7 @@ class CarService {
                         <p class="card-text">${car.details}</p>
                     </div>
                     <div class="card-footer">
-                        <button class="edit">Edit</button>
+                        <button class="edit" data-id="${car.id}">Edit</button>
                         <button class="delete" data-id="${car.id}">Delete</button>
                     </div>
                 </div>
