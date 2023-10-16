@@ -11,6 +11,26 @@ $(document).ready(function () {
     }
   });
 
+  //show alert message
+  function showAlert(message, type = "success") {
+    const alertHtml = `
+        <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+            ${message}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    `;
+
+    $("#alertPlaceholder").html(alertHtml);
+    $("#alertModal").modal("show");
+  }
+
+  // Add an event listener to close the modal when the alert is dismissed
+  $("#alertPlaceholder").on("close.bs.alert", function () {
+    $("#alertModal").modal("hide");
+  });
+
   // Example usage:
   const carService = new CarService();
   console.log(carService);
@@ -26,12 +46,32 @@ $(document).ready(function () {
       console.log("Error fetching cars:", error);
     });
 
-  // To create a new car (example data provided)
-  // carService.createCar({ name: 'New Car', imgUrl: 'url_here', details: 'Car details here' });
+  //create a new car using the add new car modal
+  $("#createCarButton").click(function () {
+    //add event listener to the button
+    const newCar = {
+      name: $("#carName").val(),
+      imgUrl: $("#imgUrl").val(),
+      details: $("#carDescription").val(),
+    };
 
-  // To update a car with ID 1 (example data provided)
-  // carService.updateCar(1, { name: 'Updated Car Name' });
+    console.log(newCar);
 
-  // To delete a car with ID 1
-  // carService.deleteCar(1);
+    carService
+      .createCar(newCar)
+      .done(() => {
+        // Update successful, you can refresh the car list or provide some feedback to the user
+        showAlert("New car added successfully!");
+        $("#addCarModal").modal("hide");
+
+        // Optionally, refresh the car list
+        $("#car-grid").empty(); // Clear the current list
+        carService.getAllCars().done((cars) => {
+          carService.renderCars(cars);
+        });
+      })
+      .fail((error) => {
+        console.log("Error updating car:", error);
+      });
+  });
 });

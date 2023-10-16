@@ -56,7 +56,7 @@ class CarService {
     cars.forEach((car) => {
       const carCard = `
             <div class="col-sm-12 col-md-12 col-lg-6 mb-4" >
-                <div class="card">
+                <div class="card" data-id="${car.id}">
                     <img src="${car.imgUrl}" class="card-img-top" alt="Car Image" />
                     <div class="card-body">
                         <h5 class="card-title">${car.name}</h5>
@@ -64,7 +64,7 @@ class CarService {
                     </div>
                     <div class="card-footer">
                         <button class="edit">Edit</button>
-                        <button class="delete" data-id="${car.id}">Delete</button>
+                        <button class="delete">Delete</button>
                     </div>
                 </div>
             </div>

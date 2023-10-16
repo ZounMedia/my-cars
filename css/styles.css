@@ -32,6 +32,12 @@ html {
   background: rgb(238, 162, 162);
 }
 
+#alertPlaceholder {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+}
+
 .navbar {
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
